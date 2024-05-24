@@ -1,16 +1,16 @@
+import { Response } from "express";
+
 const request = require("supertest");
 const app = require("../app");
 
 describe("Test the root path", () => {
-  test("It should response the GET method", done => {
+  test("It should response the GET method", (done) => {
     request(app)
-      .get("/users")
-      .then(response => {
+      .get("/short-urls")
+      .then((response: Response) => {
         expect(response.statusCode).toBe(200);
-        console.log(response.body)
         done();
+        // console.log(response.body);
       });
-
-      
   });
 });
