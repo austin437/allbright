@@ -6,10 +6,11 @@
     "start": "node ./bin/www",
     "test": "jest",
     "watch": "jest --watchAll",
-    "build": "npx tsc",
-    "dev": "concurrently \"npx tsc --watch\" \"node ./bin/www\""
+    "build": "npx tsc && npm run copy-files",
+    "copy-files": "cp -r ./src/views/ ./dist/views"
   },
   "dependencies": {
+    "@types/sqlite3": "^3.1.11",
     "concurrently": "^8.2.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
